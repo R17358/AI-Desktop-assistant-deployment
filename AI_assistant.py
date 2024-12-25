@@ -10,16 +10,12 @@ import webbrowser
 import os
 import time
 import cv2
-if os.environ.get('DISPLAY'):
-    import pyautogui
 import numpy as np
 import requests
 from bs4 import BeautifulSoup                                                   #web Srapping
 from requests import get
 import psutil                                                                   #battery
 #from googlesearch import search
-from gnews import GNews
-import pywhatkit
 
 
 #wish
@@ -192,18 +188,6 @@ def taskExecute(query):
 
             day = time.strftime("%A")
             speak2(f"today's day is {day}")
-
-        elif "switch" in query:
-            pyautogui.keyDown("alt")
-            pyautogui.press("tab")
-            time.sleep(1)
-            pyautogui.keyUp("alt")
-
-        #elif 'minimise' in query or 'background' or 'maximise' in query:
-            #pyautogui.hotkey("win","w")
-
-        #elif 'close' in query:
-            #pyautogui.hotkey("ctrl","w")
             
         elif "power left" in query or "battery" in query:
             
@@ -234,17 +218,6 @@ def taskExecute(query):
             except Exception as e:
                 st.error("sorry sir , Due to network issue i am not able to find our location")
     
-                
-        elif "screenshot" in query:
-            speak2("sir, please tell me the name for this screenshot file")
-            name = takeCommand().lower()
-            speak2("please sir hold the screen for few seconds, i am taking screenshot")
-            time.sleep(3)
-            img = pyautogui.screenshot()
-            img = cv2.cvtColor(np.array(img),cv2.COLOR_RGB2BGR)
-            cv2.imwrite(f"{name}.png",img)
-            speak2("i am done sir, the screenshot is saved in our main folder")
-
 
         elif "temperature" in query:
             speak2("at which location:")
@@ -284,12 +257,6 @@ def taskExecute(query):
             webbrowser.open("https://web.whatsapp.com/")
             time.sleep(5)
             
-        elif 'play' in query:
-            try:    
-                query = query.replace("play","")
-                pywhatkit.playonyt(query)
-            except:
-                pass
 
         elif "don't listen" in query or "wait" in query:
             speak2("tell me time for don't listening mode")
