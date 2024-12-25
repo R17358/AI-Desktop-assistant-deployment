@@ -8,10 +8,10 @@ import datetime
 import speech_recognition as sr
 import webbrowser
 import os
-os.environ['DISPLAY'] = ':0'
 import time
 import cv2
-import pyautogui
+if os.environ.get('DISPLAY'):
+    import pyautogui
 import numpy as np
 import requests
 from bs4 import BeautifulSoup                                                   #web Srapping
