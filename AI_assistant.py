@@ -346,10 +346,9 @@ def process(prompt):
         stream_data(response.text, delay=0.02)
 
 st.title("AI Desktop Assistant")
-st.divider()
 if st.button("Start"):
     begin = True
-st.divider()
+
 #st.image("jarvis5.gif",width=200)
 sidebar = st.sidebar
 sidebar.title("Menu")
@@ -468,7 +467,7 @@ with about:
         <h6>https://www.linkedin.com/in/ritesh-pandit-408557269/</h6><br>   
         <h6>https://github.com/</h6>         
 """, unsafe_allow_html=True)
-    st.divider()
+
         # Define the tasks and capabilities
     import streamlit as st
 
