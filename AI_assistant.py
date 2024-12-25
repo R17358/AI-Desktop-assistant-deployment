@@ -8,6 +8,7 @@ import datetime
 import speech_recognition as sr
 import webbrowser
 import os
+os.environ['DISPLAY'] = ':0'
 import time
 import cv2
 import pyautogui
