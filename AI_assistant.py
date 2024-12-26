@@ -14,7 +14,10 @@ import numpy as np
 import requests
 from bs4 import BeautifulSoup                                                   #web Srapping
 from requests import get
-import psutil                                                                   #battery
+import psutil    
+import pyautogui
+import pywhatkit
+#battery
 #from googlesearch import search
 
 
@@ -150,6 +153,23 @@ def taskExecute(query):
                 
             webbrowser.open_new_tab("twitter.com")
             time.sleep(5)
+
+        elif 'play' in query:
+            try:    
+                query = query.replace("play","")
+                pywhatkit.playonyt(query)
+            except:
+                pass
+                
+        elif "screenshot" in query:
+            speak2("sir, please tell me the name for this screenshot file")
+            name = takeCommand().lower()
+            speak2("please sir hold the screen for few seconds, i am taking screenshot")
+            time.sleep(3)
+            img = pyautogui.screenshot()
+            img = cv2.cvtColor(np.array(img),cv2.COLOR_RGB2BGR)
+            cv2.imwrite(f"{name}.png",img)
+            speak2("i am done sir, the screenshot is saved in our main folder")
 
         elif 'overflow' in query:
                 
