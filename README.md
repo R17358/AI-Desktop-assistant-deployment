@@ -18,7 +18,7 @@ Ensure you have Python installed. You can download it from [here](https://www.py
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/R17358/AI-Desktop-Assistant-streamlit.git
+git clone https://github.com/R17358/AI-Desktop-assistant-deployment.git
 cd ai-desktop-assistant
 ```
 
