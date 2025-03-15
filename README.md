@@ -48,6 +48,7 @@ streamlit run app.py
 - 📞 **Call & Message Support**
 - 🎶 **Music & Video Control**
 - 🔗 **Integration with Smart Home Devices**
+- **Turn it into a Robot By adding Physical mechanical and electronic parts**
 
 ## Contributors
 - Ritesh Pandit
